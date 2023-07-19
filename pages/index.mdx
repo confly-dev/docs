@@ -1,0 +1,25 @@
+# Welcome
+
+Hey, welcome to our official Confly documentation. We're glad your here!
+
+## Introduction
+
+Confly is a tool and platform that helps you (the developer) to easily create and manage web interfaces that can be used by the client to modify the configuration of your application. It's a great way to give your customers more control over your application, without having to worry about anything. Clients will no longer have to either ask you to make changes or to modify the configuration files themselves on some server.
+
+## How it works
+
+Imagine you are creating an application of some sorts (headless APIs, chatbots, game-plugins, websites, etc.) for a client. After you have finished developing the application, the client will likely want to change some settings, like the name of the website, the permissions for the chatbot, the commands for the game-plugin or the API keys for the API (You know exactly what I mean, that one annoying client that just can't seem to get enough of your time). Without confly, this would have happened in one of the following ways:
+
+- The client would have to ask you to make the changes for them (This means more work for you and waiting times for the client)
+- The client would have to modify the configuration files themselves. This requires the client knowing how to change config files on remote servers without messing up the syntax causing your entire application to crash. (And then its most likely your fault)
+- You have to create some way for the client to make changes to these settings themselves. This means you have to create some sort of safe interface and a whole system for persisting the configuration changes. (This is a lot of work)
+
+This is where confly comes in. You will tell confly what sort of settings your application depends on and confly will automatically and dynamically create a web interface for your client to make changes to these settings themselves, without the danger of them messing anything up, since you can tell confly what values are allowed for each setting.
+
+Your application will then be able to read the configuration from confly and use it to run your application. This can be easily done by using one of our SKDs or by using our REST API.
+
+## Getting started
+
+To get started, you can read and follow one of our guided examples:
+
+- [Discord Bot (Node)](/examples/discord-bot)
