@@ -14,7 +14,7 @@ const config: DocsThemeConfig = {
   chat: {
     link: "https://confly.dev/discord",
   },
-  docsRepositoryBase: "https://github.com/confly-dev/docs2/tree/main",
+  docsRepositoryBase: "https://github.com/confly-dev/docs/tree/main",
   footer: {
     text: "Confly © 2023",
   },
@@ -24,6 +24,11 @@ const config: DocsThemeConfig = {
       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     </>
   ),
+  useNextSeoProps() {
+    return {
+      titleTemplate: "%s - Confly",
+    };
+  },
 };
 
 export default config;
