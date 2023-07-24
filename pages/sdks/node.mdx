@@ -1,0 +1,55 @@
+# Confly Node.JS integration
+
+https://github.com/confly-dev/confly-js
+
+## Features
+
+- Fetch your instance data from Confly
+- Auto use an env variable for the instance token or pass it as a parameter
+- Comin soon: Full Type safety
+
+## Installation
+
+```bash
+npm install @confly-dev/confly-js
+```
+
+## Usage
+
+```js
+const { getConfig } = require("@confly-dev/confly-js");
+
+// Using the env variable 'CONFLY_INSTANCE'
+const confly = await getConfig();
+
+// Passing the token as a parameter
+const confly = await getConfig("my-token");
+
+// Without top level await
+getConfig().then((confly) => {
+  // Do something with confly
+});
+```
+
+## Example
+
+Here's a simple example of how to use the package to send a request to an endpoint using the config from Confly.
+
+```js
+const { getConfig } = require("@confly-dev/confly-js");
+const fetch = require("node-fetch");
+
+getConfig().then((confly) => {
+  fetch(confly.endpoint, {
+    headers: confly.headers,
+    method: confly.method,
+    body: JSON.stringify(confly.body),
+  })
+    .then((res) => res.json())
+    .then((json) => console.log(json));
+});
+```
+
+## Support
+
+For support, visit our [Discord](https://confly.dev/discord) or open an issue on GitHub.
